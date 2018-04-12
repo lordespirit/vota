@@ -1,0 +1,54 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Enquesta
+ *
+ * @ORM\Table(name="enquesta")
+ * @ORM\Entity
+ */
+class Enquesta
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pregunta", type="string", length=250, nullable=false)
+     */
+    private $pregunta;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_inici", type="date", nullable=false)
+     */
+    private $dataInici;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_final", type="date", nullable=false)
+     */
+    private $dataFinal;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="destacada", type="boolean", nullable=false)
+     */
+    private $destacada = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
+

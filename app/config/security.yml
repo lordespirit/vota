@@ -1,0 +1,39 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        AppBundle\Entity\Usuari:
+              algorithm: bcrypt
+    
+    # Limitem l'accés directe a administracio només pels rols d'administrador
+    access_control:
+        - { path: ^/administracio, roles: ROLE_ADMIN }
+        - { path: ^/administracioCreacio, roles: ROLE_ADMIN }
+        - { path: ^/administracioEdicio, roles: ROLE_ADMIN }
+        - { path: ^/editarEnquesta^, roles: ROLE_ADMIN }
+        
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        db_provider:
+            entity:
+                class: AppBundle\Entity\Usuari
+                property: username
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login
+            logout:
+                path: /logout
+                target: /
+        secured_area:
+            form_login:
+                csrf_token_generator: security.csrf.token_manager

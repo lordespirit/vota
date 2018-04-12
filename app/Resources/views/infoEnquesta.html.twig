@@ -1,0 +1,55 @@
+{% extends 'plantilla.bootstrap.html.twig' %}
+
+{% block bodyAtt %} id="page-top class="index" {% endblock %}
+ {% block body %}
+
+    <!-- Menu -->
+    <div id="nav-login">			
+		{{ include('login.html.twig') }}
+	</div>
+    <!-- menu -->
+
+	
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio" id="portfolio">
+      <div class="row">
+		<div class="col-md-12">
+			<div class="infoEnquesta contenidor">
+				<div class="infoId" id="{{enquesta.id}}">
+				  <h1 class="infoPregunta">{{enquesta.pregunta}}</h1>
+
+				  <!-- Si no hi ha autenticació o es administrador, es mostrarè altres detalls -->		  
+				  {%if is_granted('ROLE_ADMIN')  %}
+					  <h2>Enquesta #{{ enquesta.id }}</h2>
+					  {%if enquesta.destacada == 1  %}
+						  <h2 style="color:gold;">Destacada</h2>
+					  {% else %}
+						  <h2>No destacada</h2>
+					  {% endif %}
+				  {% endif %}
+
+				  <h2>Data inici: {{ enquesta.dataInici.date|date("d/m/Y")}}</h2>
+				  <h2>Data Final: {{ enquesta.dataFinal.date|date("d/m/Y")}}</h2>
+				  <h2 class="infoSi">SI: <span class="valueSI">{{info[0].si}}</span></h2>
+				  <h2 class="infoNo">NO: <span class="valueNO">{{info[0].no}}</span></h2>
+					  {%if info[0].activa == 1  %}
+						  <h2 style="color:chartreuse;">Activa</h2>
+					  {% else %}
+						  <h2 style="color:crimson;">No activa</h2>
+					  {% endif %}
+
+				</div>
+				<a href="{{ app.request.headers.get('referer')}}">
+				<button type="button" class="btn btn-primary btn-lg center-block">Tornar enrere</button></a>
+			</div>
+		</div>
+	  </div>
+	</section>
+
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{asset('template/freelancer/vendor/ajax/renderGrafic.js') }}"></script>
+	<script src="{{asset('template/freelancer/vendor/jquery/jquery.min.js') }}"></script>
+	<script src="{{asset('template/freelancer/js/jquery.canvasjs.min.js') }} "></script>
+{% endblock %}

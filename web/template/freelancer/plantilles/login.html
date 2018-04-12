@@ -1,0 +1,27 @@
+          <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+          <div class="container">
+            <!--<a class="navbar-brand js-scroll-trigger" href="">VOTA!</a>-->
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+				<img src="vota.png" alt="VOTA">
+
+                <li class="nav-item mx-0 mx-lg-1">
+                  <p class="nav-item py-2 px-0 px-lg-3 rounded js-scroll-trigger"> Usuari</p>
+                  <p class="nav-item py-2 px-0 px-lg-3 rounded js-scroll-trigger"> Contrasenya</p>
+                </li> 
+                <form method="POST" action="/login">
+                  <li class="nav-item mx-0 mx-lg-1">
+                    <p class="nav-link py-0 px-0 px-lg-4 rounded js-scroll-trigger">  <input type="text" name="usuari" required> </p>
+                    <p class="nav-link py-0 px-0 px-lg-4 rounded js-scroll-trigger">  <input type="password" name="password" required> </p>
+                  </li>
+                </form>
+                  <li class="nav-item mx-0 mx-lg-1">
+                    <p class="nav-link py-0 px-0 px-lg-4 rounded js-scroll-trigger"> </p>
+		    <p class="nav-link py-0 px-0 px-lg-4 rounded js-scroll-trigger">  <input type="submit" name="password" value="Login"> </p>
+                  </li>   
+
+              </ul>
+            </div>
+          </div>
+        </nav>

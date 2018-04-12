@@ -1,0 +1,37 @@
+{% extends 'plantilla.bootstrap.html.twig' %}
+
+
+{% block bodyAtt %} id="page-top class="index" {% endblock %}
+ {% block body %}
+
+    <!-- Menu -->
+    <div id="nav-login">			
+		{{ include('login.html.twig') }}
+	</div>
+    <!-- menu -->
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio" id="portfolio">
+      <div class="container-fluid">
+		  
+<!-- Si no hi ha autenticació o es administrador, es mostrarà els destacats -->		  
+{%if ( not is_granted('IS_AUTHENTICATED_REMEMBERED') ) or ( is_granted('ROLE_ADMIN') ) %}
+	
+	{{ include('destacats.html.twig') }}
+	
+<!-- Si està autenticat, aleshores evualuarà si es usuari o administrador per a mostrar el seu contingut -->	
+{% else %}	  
+	 
+	<!-- Si es usauri normal, carrega el twig d'usuaris -->
+	{% if is_granted('ROLE_USER') %} 
+	
+		{{ include('usuaris.html.twig') }}
+		  
+	{% endif %}
+	
+{% endif %}
+
+      </div>
+    </section>
+
+{% endblock %}

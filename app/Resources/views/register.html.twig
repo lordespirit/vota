@@ -1,0 +1,32 @@
+{% extends 'plantilla.bootstrap.html.twig' %}
+
+
+{% block bodyAtt %} id="page-top class="index" {% endblock %}
+ {% block body %}
+
+<!-- Menu -->
+<div id="nav-login">			
+{{ include('login.html.twig') }}
+</div>
+
+<div class="container fonsForm">
+	<!-- Form Name -->
+	<div class="form-style-6">
+		
+		<h1>Formulari de registre</h1>
+		
+		{{ form_start(form) }}
+
+			{{ form_row(form.username) }}
+			{{ form_row(form.plainPassword.first) }}
+			{{ form_row(form.plainPassword.second) }}
+			{{ form_row(form.registrar) }}
+			{{ form_row(form.reset) }}
+
+		{{ form_end(form) }}
+	
+	</div>
+</div>
+
+
+{% endblock %}

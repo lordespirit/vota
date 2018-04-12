@@ -1,0 +1,534 @@
+body{
+    background:url('fons.jpg');
+	background-size:cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    padding:2em;
+}
+
+.logo{
+	width:38% !important; 
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+.destacats {
+    width: 400px;
+	margin: 1% 3% 1% 3%;
+	height: 300px;
+    display:inline-block;
+	box-shadow: 3px 3px rgba(0, 0, 0,0.6);
+}
+
+.destacats-block {
+
+    width: 100%;
+    text-align: center;
+}
+
+.error {
+	color: white !important;
+	font-family:    Arial, Helvetica, sans-serif;
+	font-size:      12px !important;;
+	font-weight:    normal;
+	margin: 2% auto;
+	padding: 1%;
+	width: 90%;
+	
+}
+
+.nom {
+	color: white !important;
+	font-weight: bold;
+}
+
+.appflash {
+	 -webkit-animation: efecteFlash 1s linear 5;
+    -moz-animation: efecteFlash 1s linear 5;
+    -o-animation: efecteFlash 1s linear 5;
+    -ms-animation: efecteFlash 1s linear 5;
+    animation: efecteFlash 1s linear 5;
+	color: white !important;
+}
+
+@keyframes efecteFlash {
+  50% {
+    opacity: 0;
+	color: gold;
+  }
+}
+
+.form-style-6 li {
+		color: red;
+}
+
+.form-style-6 label {
+		color: azure;
+}
+
+.form-style-6{
+    font-size: 1.2em;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 16px;
+    background-color: rgba(0, 0, 0,0.6);
+	border-radius: 3px;
+}
+
+.form-style-6  button{
+	color: black !important;
+}
+
+/* .squaredFour */
+.form-style-6 input[type="checkbox"] {
+  width: 20px;
+  position: relative;
+  margin-left: 1rem;
+  transform: scale(1.5);
+}
+
+.infoEnquesta{
+	font-size: 1.2em;
+    max-width: 60%;
+    margin: 10px auto;
+    padding: 16px;
+    background-color: rgba(0, 0, 0,0.6);
+	border-radius: 3px;
+}
+
+
+.form-style-6 h1,
+.infoEnquesta h1
+{
+    background: #43D1AF;
+	border-top-left-radius:3px; 
+	border-top-right-radius:3px; 
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    margin: -16px -16px 16px -16px;
+}
+
+
+.form-style-6 h2,
+.infoEnquesta h2{
+	color: aliceblue;
+	padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    margin: -16px -16px 16px -16px;
+}
+
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="datetime"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="number"],
+.form-style-6 input[type="search"],
+.form-style-6 input[type="time"],
+.form-style-6 input[type="url"],
+.form-style-6 input[type="password"],
+.form-style-6 textarea,
+.form-style-6 select 
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="datetime"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="number"]:focus,
+.form-style-6 input[type="search"]:focus,
+.form-style-6 input[type="time"]:focus,
+.form-style-6 input[type="url"]:focus,
+.form-style-6 input[type="password"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus
+{
+    box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #43D1AF;
+}
+
+.form-style-6 button[type="reset"],
+.form-style-6 button[type="submit"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+	margin: 3% 0 3% 0;
+    background: #43D1AF;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+}
+.form-style-6 button[type="reset"]:hover,
+.form-style-6 button[type="submit"]:hover{
+    background: #2EBC99;
+}
+
+.llista_scroll_admin {
+	overflow-y: scroll;
+	height:  80vh;
+	max-height:  80vh;
+	background-color: rgba(0, 0, 0,0.6);
+	border-radius: 3px;
+	
+	scrollbar-face-color: #367CD2;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-3dlight-color: #FFFFFF;
+    scrollbar-darkshadow-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-arrow-color: #FFFFFF;
+
+}
+
+.fons-boto {
+	display: grid;
+	grid-template-columns: 66.667% 33.334%;		
+	background-color: ghostwhite;
+	border-radius: 3px;
+	margin:2%;
+	border: 1px solid black;
+	box-shadow: 1px -1px goldenrod;
+	cursor: pointer;
+}
+
+.fons-boto:hover {	
+	background-color: beige;
+}
+
+#pregunta p{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.5em;
+	padding-left: 5%;
+	color: black;
+}
+
+.llista_scroll {
+
+	overflow-y: scroll;
+	height:  80vh;
+	max-height:  80vh;
+	background-color: rgba(0, 0, 0,0.6);
+	border-radius: 3px;
+	
+	scrollbar-face-color: #367CD2;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-3dlight-color: #FFFFFF;
+    scrollbar-darkshadow-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-arrow-color: #FFFFFF;
+
+}
+
+.llista_scroll_admin::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-gradient(linear,
+									   40% 0%,
+									   75% 84%,
+									   from(#4D9C41),
+									   to(#19911D),
+									   color-stop(.6,#54DE5D))
+}
+
+.llista_scroll_admin::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+/* Let's get this party started */
+.llista_scroll::-webkit-scrollbar,
+.chartContainer::-webkit-scrollbar
+{
+    width: 8px;
+}
+ 
+/* Track */
+.llista_scroll::-webkit-scrollbar,
+.chartContainer::-webkit-scrollbar
+{    
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+.llista_scroll::-webkit-scrollbar,
+.chartContainer::-webkit-scrollbar
+{
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.chartContainer{ 
+	height:  80vh;
+	max-height:  80vh;
+	overflow-y: scroll;
+	background-color: rgba(0, 0, 0,0.6);
+	border-radius: 3px;
+	
+	scrollbar-face-color: #367CD2;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-3dlight-color: #FFFFFF;
+    scrollbar-darkshadow-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-arrow-color: #FFFFFF;
+}
+
+#render {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 30px;
+	height: 375px;
+}
+
+.renderText {
+	margin: 0 auto;
+	width: 80%;
+	margin-top: 25px;
+}
+
+.renderText h4 {
+	text-align: center;
+	color: white;
+	font-size: 2em;
+}
+
+.renderText p {
+	text-align: center;
+	color: white;
+	font-size: 1.5em;
+}
+
+.formvota {
+	text-align: center;
+	color: white;
+	font-size: 2em;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 30px;
+	height: 150px;
+	background-color: rgba(200, 200, 200,0.1);
+	border-radius: 5px;
+	padding: 2%;
+}
+
+input[type=radio] {
+	margin: 10px !important;
+	transform:scale(2);
+}
+
+.destacarResposta{
+	font-size: 1.2em;
+	color: gold;
+
+}
+
+#enquesta p {
+	font-size: 1.2em;
+}
+
+#enquesta {
+	margin: 2%;
+}
+
+.llistat_enquestes_admin {
+	padding: 10px;
+}
+
+.llistat_preguntes_flotants {
+	background-color: rgba(200, 200, 200,0.1);
+	border-radius: 5px;
+	padding: 2%;
+	
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
+
+}
+
+.pregunta {
+	grid-column: 1 / span 3;
+	margin: 2% auto;
+}
+
+.votada, .activa, .lastcall {
+	margin: 2% auto;
+
+}
+
+
+.votada_style, .activa_style, .lastcall_style {
+	color: white;
+}
+
+a,
+a:link,
+a:active,
+a:visited,
+a:hover {
+    color:           green;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.administracio
+{
+	background-color: goldenrod;
+}
+
+.llista_scroll_admin {
+
+    width: 100%;
+    text-align: center;
+}
+
+.llistat_admin {
+	width: 400px;
+	margin: 1%;
+    display:inline-block;
+	background-color: rgba(0, 0, 0,0.6);
+	border-radius: 3px;
+	padding: 2%;
+}
+
+@media screen and (min-width: 1px) and (max-width: 1400px) {
+  .cercador 
+  { 
+	  display: none; 
+  } 
+}
+
+.vots_style {
+	color: azure;
+}
+
+.fonsForm{
+	background-color: rgba(0, 0, 0,0.4);
+	border-radius: 3px;
+	padding: 2%;
+	width: 100%;
+}
+
+.butonAdminEdicioEliminar{
+	border: 2px solid transparent !important;
+}
+
+.butonAdminEdicioEliminar:hover{
+	background-color: crimson !important;
+	border: 2px solid goldenrod !important;
+	color: ghostwhite !important;
+	font-weight: bold !important;
+}
+
+.butonAdminEdicioInfo{
+	border: 2px solid transparent !important;
+}
+
+.butonAdminEdicioInfo:hover{
+	background-color: background !important;
+	border: 2px solid whitesmoke !important;
+	color: gold !important;
+	font-weight: bold !important;
+}
+
+.icona {
+	width: 40px;
+	margin-left: 5%;
+}
+
+.llistat_link {
+	font-size: 1em;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+}
+
+
+.llista_scroll a {
+	text-decoration: none;
+}
+
+.llistat img {
+	align-content: right !important;
+}

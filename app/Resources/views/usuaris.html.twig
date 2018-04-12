@@ -1,0 +1,22 @@
+
+<!-- A partir d'aqui, apareixen els llistat d'enquestes quan usuari estigui login -->
+<article>
+			<div class="llistat_enquestes">
+				<div class="col-md-6 llista_scroll">
+				</div>
+				<div class="col-md-6 chartContainer">
+					<h2 class="escull text-center text-uppercase text-secondary mb-0">Escull una enquesta</h2>
+					<div id="render"></div>
+					<div class="renderText">
+						<p>Per a poder votar una enquesta, només has de seleccionar una en el llistat i veuràs el seu gràfic</p>
+						
+					</div>
+				</div>
+			</div>
+		
+</article>
+
+		
+	{% block javascripts %}
+	<script src="{{asset('template/freelancer/vendor/ajax/llistat.js') }}"></script>
+	{% endblock %}

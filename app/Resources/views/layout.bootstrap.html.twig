@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+        {% block meta %}
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="">
+            <meta name="author" content="">
+        {% endblock %}
+
+        {% block title %}Vota!{% endblock %}
+
+        {% block stylesheets %}
+            <!-- JQuery -->
+            <script src="{{asset('template/freelancer/js/jquery-3.3.1.min.js') }}"></script>
+
+            <!-- Bootstrap core CSS -->
+            <!-- <link href="{{asset('template/freelancer/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> -->
+			<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+			<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+			
+			
+            <!-- Custom fonts for this template -->
+            <link href="{{asset('template/freelancer/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+			
+
+            <!-- Plugin CSS -->
+            <link href="{{asset('template/freelancer/vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css">
+
+            <!-- Custom styles for this template -->
+            <link href="{{asset('template/freelancer/css/freelancer.css') }}" rel="stylesheet">
+			<link href="{{asset('template/freelancer/css/vota.css') }}" rel="stylesheet">
+        {% endblock %}
+
+{% block bodyAtt %} id="page-top class="index" {% endblock %}
+ {% block body %}
+
+    <!-- Menu -->
+    <div id="nav-login">			
+	{{ include('login.html.twig') }}
+	</div>
+
+    <!-- menu -->
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+		  
+<!-- Si no hi ha autenticació, es mostrarà els destacats -->		  
+{% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+
+	{{ include('destacats.html.twig') }}
+	
+<!-- Si està autenticat, aleshores evualuarà si es usuari o administrador per a mostrar el seu contingut -->	
+{% else %}	  
+	 
+	<!-- Si es usauri normal, carrega el twig d'usuaris -->
+	{% if is_granted('ROLE_USER') %} 
+	
+		{{ include('usuaris.html.twig') }}
+	  
+	<!-- Si no es usuari, evalua si es administrador per a mostrar el twig d'administrador -->
+	{% elseif  is_granted('ROLE_ADMIN') %} 
+	
+		{{ include('admin.html.twig') }}
+		  
+	{% endif %}
+	
+{% endif %}
+
+      </div>
+    </section>
+	
+{% endblock %}
+{% block javascripts %}
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{asset('template/freelancer/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{asset('template/freelancer/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{asset('template/freelancer/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{asset('template/freelancer/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="{{asset('template/freelancer/js/jqBootstrapValidation.js') }}"></script>
+    <script src="{{asset('template/freelancer/js/contact_me.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{asset('template/freelancer/js/freelancer.min.js') }}"></script>
+	<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+	<script src="{{asset('template/freelancer/vendor/ajax/destacats.js') }}"></script>
+
+{% endblock %}

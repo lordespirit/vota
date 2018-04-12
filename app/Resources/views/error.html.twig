@@ -1,0 +1,27 @@
+{% extends 'plantilla.bootstrap.html.twig' %}
+
+
+{% block bodyAtt %} id="page-top class="index" {% endblock %}
+ {% block body %}
+
+    <!-- Menu -->
+    <div id="nav-login">			
+	{{ include('login.html.twig') }}
+	</div>
+
+    <!-- menu -->
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio" id="portfolio">
+      <div class="container-fluid">
+		  
+		  <h4 class="text-center text-uppercase text-secondary mb-0">Hi ha hagut alguna incidència<h4>
+				  <p class="text-center text-secondary mb-0">Si escau, possat en contacto amb l'administrador</p>
+     {{ dump() }}
+				  						  
+				  
+	</div>
+    </section>
+	
+
+{% endblock %}

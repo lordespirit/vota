@@ -1,0 +1,38 @@
+{% extends 'plantilla.bootstrap.html.twig' %}
+
+{% block bodyAtt %} id="page-top class="index" {% endblock %}
+{% block body %}
+
+	<!-- Menu -->
+    <div id="nav-login">			
+		{{ include('login.html.twig') }}
+	</div>
+    <!-- menu -->
+	
+
+<div class="container fonsForm">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="form-style-6">
+				<h1>Editar Enquesta #{{ id }}</h1>
+				{{ form_start(form) }}
+				{{ form_end(form) }}
+				
+			<form id="delete" action="{{ path('eliminar', { 'id': id }) }}" method="post">
+					<button id="delete_button" class="butonAdminEdicioEliminar" type="submit" >Eliminar</button>
+			</form>
+			<form action="{{ path('renderEnquesta', { 'id': id }) }}" method="post">
+					<button class="butonAdminEdicioInfo" type="submit" >Gràfic</button>
+			</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+		
+{% block javascripts %}
+	<script src="{{asset('template/freelancer/vendor/ajax/edicioAdmin.js') }}"></script>
+	<script src="{{asset('template/freelancer/vendor/ajax/checkFormEdit.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'plantilla.bootstrap.html.twig' %}
+
+{% block bodyAtt %} id="page-top class="index" {% endblock %}
+{% block body %}
+
+	<!-- Menu -->
+    <div id="nav-login">			
+		{{ include('login.html.twig') }}
+	</div>
+    <!-- menu -->
+	
+
+<div class="container fonsForm">
+	
+		<!-- Form Name -->
+		<div class="form-style-6">
+
+			<h1>Formulari de creació d'enquestes</h1>
+
+			{{ form_start(form) }}
+
+			{{ form_end(form) }}
+
+		</div>
+			
+</div>
+		
+		
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{asset('template/freelancer/vendor/ajax/checkForm.js') }}"></script>
+{% endblock %}

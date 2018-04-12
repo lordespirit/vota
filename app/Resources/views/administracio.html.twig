@@ -1,0 +1,26 @@
+{% extends 'plantilla.bootstrap.html.twig' %}
+
+
+{% block bodyAtt %} id="page-top class="index" {% endblock %}
+ {% block body %}
+
+	<!-- Menu -->
+    <div id="nav-login">			
+		{{ include('login.html.twig') }}
+	</div>
+    <!-- menu -->
+	
+<!-- A partir d'aqui, apareixen els llistat d'enquestes per administrar -->
+<article>	
+			<div class="llistat_enquestes_admin">
+				<div class="llista_scroll_admin">
+				</div>
+			</div>		
+</article>
+{% endblock %}
+
+
+		
+	{% block javascripts %}
+		<script src="{{asset('template/freelancer/vendor/ajax/llistatAdministracio.js') }}"></script>
+	{% endblock %}

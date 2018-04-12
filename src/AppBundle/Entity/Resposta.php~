@@ -1,0 +1,49 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Resposta
+ *
+ * @ORM\Table(name="resposta")
+ * @ORM\Entity
+ */
+class Resposta
+{
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="valor", type="boolean", nullable=false)
+     */
+    private $valor;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=false)
+     */
+    private $data = 'CURRENT_TIMESTAMP';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_usuari", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $idUsuari;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_enquesta", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $idEnquesta;
+
+
+}
+

@@ -1,0 +1,101 @@
+<nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+		<img class="logo" src="{{asset('template/freelancer/img/logotipo.png') }}" alt="VOTA">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">	
+
+      <form class="navbar-form navbar-left cercador" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Cercador">
+        </div>
+        <input type="submit" class="btn btn-default" value="Cerca!"/>
+      </form>
+	<form class="navbar-form navbar-left" role="search" action="{{ path('homepage') }}">
+		<input type="submit" class="btn btn-default" value="Inici"/>
+    </form>
+{% if is_granted('ROLE_ADMIN') %} 
+	
+	{% if (app.request.get('_route') == 'homepage') or (app.request.get('_route') == 'administracioCreacio') or (app.request.get('_route') == 'editarEnquesta') or (app.request.get('_route') == 'renderEnquesta')%}
+		
+		<form class="navbar-form navbar-left" role="search" action="{{ path('administracio') }}">
+			<input type="submit" class="btn btn-default administracio" value="Gestio / Administració"/>
+		</form>
+			
+	{% elseif app.request.get('_route') == 'administracio' %}	
+		
+		<form class="navbar-form navbar-left" action="{{ path('administracioCreacio') }}">
+			<input type="submit" class="btn btn-labeled btn-warning" value="Crear enquesta"/>
+		</form>
+		
+	{% endif %}
+	
+{% endif %}
+
+      <ul class="nav navbar-nav navbar-right">
+		  
+		  
+{% if app.session.flashBag.has('success') %}
+	{% for message in app.flashes('success') %}
+		<li><p class="navbar-text appflash">{{ message }}</p></li>
+	{% endfor %}
+{% elseif app.session.flashBag.has('error') %}
+	{% for message in app.flashes('error') %}
+		<li><p class="navbar-text appflash">{{ message }}</p></li>
+	{% endfor %}
+{% else %}
+	{% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+		<li><p class="navbar-text appflash">Tens ja un compte?</p></li>
+	{% endif %}
+{% endif %}
+		
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} 
+		
+	<li><p class="navbar-text">Has iniciat sessió &nbsp;<span class='nom'> {{ app.user.username }} </span> &nbsp; <a class="link" href="{{ path('logout') }}">Tancar sessió</a></p></li>
+	
+{% else %}
+	
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+			<ul id="login-dp" class="dropdown-menu">
+				<li>
+					 <div class="row">
+							<div class="col-md-12">
+
+								 <form class="form" role="form" method="post" action="{{ path('login') }}" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputEmail2">Nom d'usuari</label>
+											 <input type="text" name="_username" class="form-control" id="exampleInputEmail2" placeholder="Username" required>
+										</div>
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputPassword2">Password</label>
+											 <input type="password" name="_password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+										</div>
+										<div class="form-group">
+											 <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+										</div>
+										<div class="checkbox">
+											 <label>
+											 <input type="checkbox"> Romandre connectat
+											 </label>
+										</div>
+								 </form>
+							</div>
+							<div class="bottom text-center">
+								Ets nou ? <a href="{{ path('user_registration') }}"><b>Uneix-te a vota!</b></a>
+							</div>
+					 </div>
+				</li>
+			</ul>
+        </li>
+
+			
+{% endif %}
+
+		</ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
