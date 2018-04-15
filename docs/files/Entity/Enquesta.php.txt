@@ -1,0 +1,160 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Enquesta
+ *
+ * @ORM\Table(name="enquesta")
+ * @ORM\Entity
+ */
+class Enquesta
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pregunta", type="string", length=250, nullable=false)
+     */
+    private $pregunta;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_inici", type="date", nullable=false)
+     */
+    private $dataInici;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_final", type="date", nullable=false)
+     */
+    private $dataFinal;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="destacada", type="boolean", nullable=false)
+     */
+    private $destacada = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+
+    /**
+     * Set pregunta
+     *
+     * @param string $pregunta
+     *
+     * @return Enquesta
+     */
+    public function setPregunta($pregunta)
+    {
+        $this->pregunta = $pregunta;
+
+        return $this;
+    }
+
+    /**
+     * Get pregunta
+     *
+     * @return string
+     */
+    public function getPregunta()
+    {
+        return $this->pregunta;
+    }
+
+    /**
+     * Set dataInici
+     *
+     * @param \DateTime $dataInici
+     *
+     * @return Enquesta
+     */
+    public function setDataInici($dataInici)
+    {
+        $this->dataInici = $dataInici;
+
+        return $this;
+    }
+
+    /**
+     * Get dataInici
+     *
+     * @return \DateTime
+     */
+    public function getDataInici()
+    {
+        return $this->dataInici;
+    }
+
+    /**
+     * Set dataFinal
+     *
+     * @param \DateTime $dataFinal
+     *
+     * @return Enquesta
+     */
+    public function setDataFinal($dataFinal)
+    {
+        $this->dataFinal = $dataFinal;
+
+        return $this;
+    }
+
+    /**
+     * Get dataFinal
+     *
+     * @return \DateTime
+     */
+    public function getDataFinal()
+    {
+        return $this->dataFinal;
+    }
+
+    /**
+     * Set destacada
+     *
+     * @param boolean $destacada
+     *
+     * @return Enquesta
+     */
+    public function setDestacada($destacada)
+    {
+        $this->destacada = $destacada;
+
+        return $this;
+    }
+
+    /**
+     * Get destacada
+     *
+     * @return boolean
+     */
+    public function getDestacada()
+    {
+        return $this->destacada;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
+
